@@ -15,8 +15,6 @@ import io.flutter.plugins.GeneratedPluginRegistrant
 
 class MainActivity : FlutterActivity() {
 
-    private val CHANNEL = "samples.flutter.dev/battery"
-
     private val methodGetBatteryLevel = "getBatteryLevel"
     private val methodGoToHomeScreen = "goToHomeScreen"
 
@@ -63,5 +61,9 @@ class MainActivity : FlutterActivity() {
     private fun goToHomeScreen() {
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
+    }
+
+    companion object {
+        const val CHANNEL = "samples.flutter.dev/battery"
     }
 }

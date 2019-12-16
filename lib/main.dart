@@ -48,6 +48,10 @@ class __MyHomePageState extends State<_MyHomePage> {
               child: Text('Get Battery Level'),
               onPressed: _getBatteryLevel,
             ),
+            RaisedButton(
+              child: Text('Go to native home screen'),
+              onPressed: _goToNativeHomeScreen,
+            ),
             Text(_batteryLevel),
           ],
         ),
@@ -67,5 +71,9 @@ class __MyHomePageState extends State<_MyHomePage> {
     setState(() {
       _batteryLevel = batteryLevel;
     });
+  }
+
+  Future<void> _goToNativeHomeScreen() async {
+    await platform.invokeMethod('goToHomeScreen');
   }
 }
